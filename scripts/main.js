@@ -4,7 +4,7 @@ $(document).ready(function () {
 
 	var root = 'http://jsonplaceholder.typicode.com';
 
-	
+
 
 	$("#start").click(function(){
 
@@ -37,5 +37,12 @@ $(document).ready(function () {
 				}			
 			});
 	})
+	
 	})
+
+	$("#showMap").click(function(){
+		alert();
+	})
+	
 });
+

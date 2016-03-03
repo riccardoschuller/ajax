@@ -1,7 +1,17 @@
-<div id="scheda" class="col-lg-6">
+
+
+
+    <div id="scheda" class="col-lg-6">
     
   
   	<h1>{{ name }}</h1>
+  	<p>e-mail:  <a href="mailto:{{ email }}">{{ email }}</a><br>
+  	indirizzo: {{ address.street }}, {{ address.city }}<br>
+  	telefono: <a href="tel:{{ phone }}">{{ phone }}</a><br>
+  	sito web: <a href="{{ website }}">{{ website }}</a>	
+  	</p>
+  	<button type="button" id="showMap" class="btn btn-info">Scopri dov'è!</button>
 
-  	<button type="button" class="btn btn-info">Più info...</button>
-</div>
+  	</div>
+
+
