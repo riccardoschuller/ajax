@@ -4,19 +4,37 @@ $(document).ready(function () {
 
 	var root = 'http://jsonplaceholder.typicode.com';
 
-	 $("#postName").click(function(){
-        $.ajax('http://jsonplaceholder.typicode.com/users', {
-  method: 'POST',
-  data: {
-    name: $("#typeName").val
-    
-    
-  }
-}).then(function(data) {
-  console.log(data);
-});
+	$("#postName").on("click",function(){
+	 
+		 var user = {
+		 	name: $("#exampleInputEmail1").val()
+		 };
 
-});
+
+	 	$.ajax( 
+			{
+				url: root + '/users',
+				method: 'POST', //GET, POST, PUT, DELETE
+				contentType: 'application/json', //ask server to return json
+				dataType: 'json',
+				data: JSON.stringify(user), //says to server we are sending json
+				//Call if request return successfully
+				success: function (response) {
+
+					
+
+					alert("onowin")
+				
+				},
+				//Call in case of request error
+				error: function (request, errorType, errorMessage){
+					alert('Error: ' + errorType + ', message: ' + errorMessage)
+					console.log(request);
+				}			
+			});	
+	 	console.log(user)
+	
+	});
 
 	$("#start").click(function(){
 
@@ -84,7 +102,7 @@ $(document).ready(function () {
 					alert('Error: ' + errorType + ', message: ' + errorMessage)
 					console.log(request);
 				}			
-			});
+		});
 	})
 	
 	})
