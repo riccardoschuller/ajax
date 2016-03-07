@@ -4,11 +4,24 @@ $(document).ready(function () {
 
 	var root = 'http://jsonplaceholder.typicode.com';
 
+	 $("#postName").click(function(){
+        $.ajax('http://jsonplaceholder.typicode.com/users', {
+  method: 'POST',
+  data: {
+    name: $("#typeName").val
+    
+    
+  }
+}).then(function(data) {
+  console.log(data);
+});
 
+});
 
 	$("#start").click(function(){
 
-	$("#first").slideUp();	
+	$("#first").slideUp();
+	$("#second").slideUp();	
 	$.get('./html/user.html', function ( userTemplate ) {
 
 		$.ajax( 
@@ -42,7 +55,7 @@ $(document).ready(function () {
 	})
 
 	$("#start2").click(function(){
-
+	$("#first").slideUp();
 	$("#second").slideUp();
 
 	$.get('./html/posts.html', function ( userTemplate ) {
@@ -77,7 +90,7 @@ $(document).ready(function () {
 	})
 
 
-	$("#showMap").click(function(){
+	$(".btn-info").click(function(){
 		alert();
 	})
 	
