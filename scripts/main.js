@@ -3,13 +3,14 @@
 $(document).ready(function () {
 
 	var root = 'http://jsonplaceholder.typicode.com';
+	
 
-	$("#postName").on("click",function(){
+	$("#postName").on("click",function(e){
 	 
 		 var user = {
 		 	name: $("#exampleInputEmail1").val()
 		 };
-
+		 e.preventDefault();
 
 	 	$.ajax( 
 			{
@@ -59,6 +60,13 @@ $(document).ready(function () {
 					
 						$('.container').append(html)
 					}
+						alert($(".btn-info").length)
+						
+					$(".btn-info").off().on("click" , function(){
+						alert(Math.random());
+					})						
+
+					$(".btn-info")
 				
 				},
 				//Call in case of request error
@@ -108,9 +116,7 @@ $(document).ready(function () {
 	})
 
 
-	$(".btn-info").click(function(){
-		alert();
-	})
+	
 	
 });
 
