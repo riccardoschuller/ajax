@@ -6,7 +6,7 @@ $(document).ready(function () {
 	
 
 	$("#postName").on("click",function(e){
-	 
+	 		$("#logIn").slideUp();
 		 var user = {
 		 	name: $("#exampleInputEmail1").val()
 		 };
@@ -24,7 +24,7 @@ $(document).ready(function () {
 
 					
 
-					alert("onowin")
+					alert(user + " è stato salvato.")
 				
 				},
 				//Call in case of request error
@@ -40,7 +40,7 @@ $(document).ready(function () {
 	$("#start").click(function(){
 
 	$("#first").slideUp();
-	$("#second").slideUp();	
+		
 	$.get('./html/user.html', function ( userTemplate ) {
 
 		$.ajax( 
@@ -60,13 +60,14 @@ $(document).ready(function () {
 					
 						$('.container').append(html)
 					}
-						alert($(".btn-info").length)
+						console.log($(".btn-info").length)
 						
-					$(".btn-info").off().on("click" , function(){
-						alert(Math.random());
-					})						
+					$(".btn-info").on("click", function() {
+				      var index = $(this).index();
+				      console.log(index);
+ 					 });						
 
-					$(".btn-info")
+					
 				
 				},
 				//Call in case of request error
@@ -81,7 +82,7 @@ $(document).ready(function () {
 	})
 
 	$("#start2").click(function(){
-	$("#first").slideUp();
+	
 	$("#second").slideUp();
 
 	$.get('./html/posts.html', function ( userTemplate ) {
