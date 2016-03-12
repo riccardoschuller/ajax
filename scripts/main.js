@@ -114,7 +114,7 @@ $(document).ready(function () {
 					
 					var $html = $(html);
 
-					$html.find('.btn-info').on("click", {user : response[i]}, function(e) {
+					$html.find('.btn-info').off().on("click", {user : response[i]}, function(e) {
 				     
 				      		//console.log(e);
 				      		//console.log(e.data) //l'oggetto che definisci tu prima
@@ -132,7 +132,12 @@ $(document).ready(function () {
 									        var map = new google.maps.Map(mapDiv, {
 									          center: {lat: parseInt(e.data.user.address.geo.lat), lng: parseInt(e.data.user.address.geo.lng)},
 									          zoom: 8
-									        });});
+									        });
+									        	var marker = new google.maps.Marker({
+											    position: map.center,
+											    map: map,
+											    	});
+									    });
 
 										
 										 
