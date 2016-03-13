@@ -59,7 +59,7 @@ $(document).ready(function () {
 						var html = template(response[i]);
 
 						/*
-						la variabile html ora e' una stringa con dentro tag HTML
+						la variabile htmlk-ò.o0è pno7òpà ora e' una stringa con dentro tag HTML
 						con append() jQuery la trasforma in elementi javascript e poi li inserisce nel DOM		
 
 						$('.container').append(html)
@@ -115,7 +115,7 @@ $(document).ready(function () {
 					var $html = $(html);
 
 					$html.find('.btn-info').off().on("click", {user : response[i]}, function(e) {
-				     
+				     		$( "#map" ).remove();
 				      		//console.log(e);
 				      		//console.log(e.data) //l'oggetto che definisci tu prima
 				      		//console.log(e.data.user) //user perche' noi l'abbiamo chiamato cosi sopra
@@ -131,7 +131,7 @@ $(document).ready(function () {
 				      					$.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCxye_y5iBnACPLQw4G9YZrHAjWLVuA4z4&callback", function () {var mapDiv = document.getElementById('map');
 									        var map = new google.maps.Map(mapDiv, {
 									          center: {lat: parseInt(e.data.user.address.geo.lat), lng: parseInt(e.data.user.address.geo.lng)},
-									          zoom: 8
+									          zoom: 4
 									        });
 									        	var marker = new google.maps.Marker({
 											    position: map.center,
@@ -141,9 +141,11 @@ $(document).ready(function () {
 
 										
 										 
-										$( e.target ).closest($(".btn-info")).slideUp()
+										
 				      					$( e.target ).closest($(".col-lg-6")).append(html)
 				      				}
+
+
 
 				      			
 				      		});
